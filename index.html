@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Личный сайт о футболе: история, правила, позиции, турниры, легенды и мой любимый вид спорта.">
+  <title>Мой мир: футбол</title>
+  <style>
+    :root {
+      --pitch: #1f5d3a;
+      --pitch-dark: #143d27;
+      --chalk: #f6f8f3;
+      --ball: #d6e52d;
+      --clay: #c8643c;
+      --ink: #15201a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--chalk);
+    }
+
+    a { color: var(--pitch); font-weight: bold; }
+    a:hover { color: var(--clay); }
+    a:focus-visible { outline: 3px solid var(--ball); outline-offset: 2px; }
+
+
+    header {
+      background: var(--pitch);
+      color: var(--chalk);
+      padding: 24px 20px 0;
+      border-bottom: 8px solid var(--ball);
+    }
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 24px;
+    }
+    .header-text { flex: 1 1 380px; }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      line-height: 1.1;
+    }
+    header p { margin: 0 0 16px; max-width: 34em; }
+    .header-ball { width: 200px; height: 200px; }
+
+    nav { margin-top: 12px; }
+    nav ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 1000px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    nav a {
+      display: block;
+      padding: 10px 16px;
+      color: var(--chalk);
+      text-decoration: none;
+      background: var(--pitch-dark);
+      border-radius: 8px 8px 0 0;
+    }
+    nav a:hover { background: var(--ball); color: var(--ink); }
+
+
+    main, .page-aside, footer .footer-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    section { padding: 36px 0 12px; }
+
+    h2 {
+      font-size: 2rem;
+      margin: 0 0 12px;
+      padding-left: 14px;
+      border-left: 10px solid var(--ball);
+      color: var(--pitch-dark);
+    }
+    h3 { font-size: 1.4rem; margin: 28px 0 8px; color: var(--pitch); }
+    h4 { font-size: 1.1rem; margin: 18px 0 6px; color: var(--clay); }
+
+    .about {
+      background: #fff;
+      border: 2px solid var(--pitch);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 28px;
+    }
+
+    figure {
+      margin: 20px 0;
+      padding: 16px;
+      background: #fff;
+      border: 2px dashed var(--pitch);
+      border-radius: 12px;
+      text-align: center;
+    }
+    figure img { max-width: 100%; height: auto; width: 500px; }
+    figcaption { font-size: 0.95rem; color: #46564d; margin-top: 8px; }
+
+    ul, ol { padding-left: 1.4em; }
+    li { margin-bottom: 6px; }
+
+    .table-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; background: #fff; }
+    caption { text-align: left; font-weight: bold; padding: 8px 0; }
+    th, td { border: 1px solid var(--pitch); padding: 10px 12px; text-align: left; }
+    th { background: var(--pitch); color: var(--chalk); }
+    tbody tr:nth-child(even) { background: #eef3e6; }
+
+    dl dt { font-weight: bold; color: var(--pitch-dark); margin-top: 10px; }
+    dl dd { margin: 0 0 6px 1.2em; }
+
+    blockquote {
+      margin: 20px 0;
+      padding: 12px 20px;
+      background: var(--ball);
+      border-radius: 0 12px 12px 0;
+      border-left: 8px solid var(--pitch-dark);
+      font-size: 1.15rem;
+    }
+
+    .page-aside { padding-top: 24px; padding-bottom: 12px; }
+    aside {
+      background: var(--pitch-dark);
+      color: var(--chalk);
+      border-radius: 12px;
+      padding: 8px 24px 16px;
+    }
+    aside h2 { color: var(--ball); border-left-color: var(--clay); }
+    aside a { color: var(--ball); }
+
+    footer {
+      margin-top: 40px;
+      padding: 24px 0;
+      background: var(--pitch);
+      color: var(--chalk);
+      text-align: center;
+      border-top: 8px solid var(--ball);
+    }
+    footer a { color: var(--ball); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="header-text">
+        <h1>Футбол — игра, которую я люблю больше всего</h1>
+        <p>Привет! Меня зовут <strong>Ханагян Нарек</strong>. На этой странице я рассказываю о своём любимом виде спорта и о том, что нужно знать, чтобы в нём разбираться.</p>
+      </div>
+      <img class="header-ball" alt="Футбольный мяч"
+           src="https://www.pngarts.com/files/2/Soccer-Ball-PNG-Image-Background.png">
+    </div>
+
+    <nav aria-label="Основное меню">
+      <ul>
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#history">История</a></li>
+        <li><a href="#rules">Правила</a></li>
+        <li><a href="#positions">Позиции</a></li>
+        <li><a href="#tournaments">Турниры</a></li>
+        <li><a href="#legends">Легенды</a></li>
+        <li><a href="#links">Ссылки</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="about">
+      <h2>Почему футбол — мой любимый спорт</h2>
+      <div class="about">
+        <p>Я люблю футбол за простую идею: один мяч, две команды и бесконечное количество сюжетов. Каждый матч — маленькая история, в которой может случиться что угодно, даже на последней минуте.</p>
+        <p>Футбол учит работать в команде, не сдаваться при счёте 0:1 и радоваться чужому успеху так же, как своему.</p>
+      </div>
+
+      <h3>Что мне нравится в футболе</h3>
+      <ul>
+        <li>Азарт и непредсказуемость каждого матча.</li>
+        <li>Командный дух и болельщицкая атмосфера на трибунах.</li>
+        <li>Красивые голы и умные тактические решения.</li>
+        <li>Возможность играть самому: во дворе, в школе или на секции.</li>
+      </ul>
+
+      <blockquote>
+        <p>Футбол — это просто: 22 человека гоняются за мячом, а в конце всегда выигрывает тот, кто лучше подготовился.</p>
+      </blockquote>
+    </section>
+
+    <section id="history">
+      <h2>История футбола</h2>
+      <p>Футбол — самая популярная командная игра в мире. В неё играют на улицах, во дворах, на школьных полях и на огромных стадионах.</p>
+
+      <figure>
+        <img alt="Футбольный мяч" 
+             src="https://img.magnific.com/free-photo/soccer-players-action-professional-stadium_654080-1746.jpg?semt=ais_hybrid&w=740&q=80">
+        
+      </figure>
+
+      <h3>Как всё начиналось</h3>
+      <p>Игры с мячом ногами существовали в разных странах очень давно, но современный футбол родом из Англии. В 1863 году там была создана Футбольная ассоциация и записаны единые правила.</p>
+
+      <h3>Важные даты</h3>
+      <ul>
+        <li><strong>1863</strong> — создана Футбольная ассоциация Англии.</li>
+        <li><strong>1904</strong> — в Париже основана ФИФА.</li>
+        <li><strong>1930</strong> — первый чемпионат мира в Уругвае.</li>
+      </ul>
+    </section>
+
+    <section id="rules">
+      <h2>Основные правила</h2>
+
+      <h3>Как играют</h3>
+      <ol>
+        <li>В каждой команде на поле не более 11 игроков, включая вратаря.</li>
+        <li>Матч длится два тайма по 45 минут плюс добавленное судьёй время.</li>
+        <li>Цель игры — забить мяч в ворота соперника.</li>
+        <li>Руками играть нельзя — это разрешено только вратарю в своей штрафной площади.</li>
+        <li>За нарушения судья назначает штрафные и пенальти, а за грубую игру показывает жёлтые и красные карточки.</li>
+      </ol>
+
+      <h3>Размеры поля и мяча</h3>
+      <div class="table-wrap">
+        <table>
+          <caption>Основные параметры футбола</caption>
+          <thead>
+            <tr>
+              <th scope="col">Параметр</th>
+              <th scope="col">Значение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Длина поля</th><td>от 90 до 120 м</td></tr>
+            <tr><th scope="row">Ширина поля</th><td>от 45 до 90 м</td></tr>
+            <tr><th scope="row">Окружность мяча</th><td>68–70 см</td></tr>
+            <tr><th scope="row">Игроков в команде</th><td>11</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Мини-словарь футболиста</h3>
+      <dl>
+        <dt>Офсайд</dt>
+        <dd>Положение «вне игры», когда нападающий в момент передачи находится ближе к воротам, чем мяч и предпоследний защитник.</dd>
+        <dt>Пенальти</dt>
+        <dd>Одиннадцатиметровый удар по воротам за нарушение в штрафной площади.</dd>
+        <dt>Хет-трик</dt>
+        <dd>Три гола, забитых одним игроком в одном матче.</dd>
+        <dt>Угловой</dt>
+        <dd>Удар из угла поля, когда мяч ушёл за линию после касания защитника.</dd>
+      </dl>
+    </section>
+
+    <section id="positions">
+      <h2>Игровые позиции</h2>
+      <p>У каждого игрока на поле своя роль.</p>
+
+      <h3>Основные линии</h3>
+      <ul>
+        <li><strong>Вратарь</strong> — защищает ворота и начинает атаки.</li>
+        <li><strong>Защитники</strong> — не дают сопернику создать опасный момент.</li>
+        <li><strong>Полузащитники</strong> — связывают оборону и атаку, управляют темпом игры.</li>
+        <li><strong>Нападающие</strong> — забивают голы.</li>
+      </ul>
+
+      <h3>Популярные расстановки</h3>
+      <h4>Что такое схема игры</h4>
+      <p>Схема показывает, сколько игроков находится в каждой линии, не считая вратаря. Например, 4-4-2 означает четыре защитника, четыре полузащитника и два нападающих.</p>
+      <h4>Примеры схем</h4>
+      <ul>
+        <li>4-4-2 — классическая и сбалансированная схема.</li>
+        <li>4-3-3 — схема для атакующего футбола.</li>
+        <li>5-3-2 — схема с упором на оборону.</li>
+      </ul>
+    </section>
+
+    <section id="tournaments">
+      <h2>Главные турниры</h2>
+      <ul>
+        <li><strong>Чемпионат мира</strong> — главный турнир для сборных, проходит раз в четыре года.</li>
+        <li><strong>Чемпионат Европы</strong> — турнир сборных европейских стран.</li>
+        <li><strong>Лига чемпионов УЕФА</strong> — главный клубный турнир Европы.</li>
+        <li><strong>Национальные лиги</strong> — английская Премьер-лига, испанская Ла Лига, итальянская Серия А и другие.</li>
+      </ul>
+    </section>
+
+    <section id="legends">
+      <h2>Легенды футбола</h2>
+      <p>Среди самых известных имён — Пеле, Диего Марадона, Йохан Кройф, Лионель Месси и Криштиану Роналду. Рекорд по числу побед на чемпионатах мира у сборной Бразилии: у неё пять титулов.</p>
+
+    </section>
+
+  </main>
+
+  <div class="page-aside">
+    <aside id="links">
+      <h2>Полезные ссылки</h2>
+      <ul>
+        <li><a href="https://www.fifa.com/" target="_blank" rel="noopener">FIFA — международная федерация футбола</a></li>
+        <li><a href="https://www.uefa.com/" target="_blank" rel="noopener">УЕФА — европейский футбол</a></li>
+        <li><a href="https://www.premierleague.com/" target="_blank" rel="noopener">Английская Премьер-лига</a></li>
+        <li><a href="https://www.laliga.com/" target="_blank" rel="noopener">Ла Лига — чемпионат Испании</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 Ханагян Нарек. Футбольный портал.</p>
+      <p><a href="#">Наверх</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
